@@ -46,6 +46,14 @@ Comfortable across the stack; happiest when code removes someone's manual work.
   <img src="./profile-summary-card-output/transparent/2-most-commit-language.svg" />
 </a>
 
+### Metrics
+
+![Metrics](./metrics.svg)
+
 ### Activity
 
-![Activity Graph](https://github-readme-activity-graph.vercel.app/graph?username=nyuton1&hide_border=true&area=true&theme=minimal)
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/nyuton1/nyuton1/output/github-contribution-grid-snake-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/nyuton1/nyuton1/output/github-contribution-grid-snake.svg" />
+  <img alt="github contribution grid snake animation" src="https://raw.githubusercontent.com/nyuton1/nyuton1/output/github-contribution-grid-snake.svg" />
+</picture>

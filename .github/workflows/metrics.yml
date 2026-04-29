@@ -1,0 +1,26 @@
+name: Metrics
+
+on:
+  schedule:
+    - cron: "0 0 * * *"
+  workflow_dispatch:
+  push:
+    branches: [main]
+
+jobs:
+  github-metrics:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: lowlighter/metrics@latest
+        with:
+          token: ${{ secrets.SUMMARY_GITHUB_TOKEN }}
+          user: nyuton1
+          template: classic
+          base: "header, activity, community, repositories, metadata"
+          config_timezone: Asia/Tokyo
+          plugin_isocalendar: yes
+          plugin_isocalendar_duration: half-year
+          plugin_followup: yes
+          plugin_followup_sections: repositories, user
