@@ -48,7 +48,7 @@ Comfortable across the stack; happiest when code removes someone's manual work.
 
 ### Metrics
 
-![Metrics](./metrics.svg)
+![Metrics](./github-metrics.svg)
 
 ### Activity
 
