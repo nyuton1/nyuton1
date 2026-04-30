@@ -39,21 +39,6 @@ Comfortable across the stack; happiest when code removes someone's manual work.
 ![Unity](https://img.shields.io/badge/Unity-000000?style=flat&logo=unity&logoColor=white)
 ![M5Stack](https://img.shields.io/badge/M5Stack-EA0029?style=flat&logo=m5stack&logoColor=white)
 
-### GitHub Stats
-
-<a href="https://github.com/vn7n24fzkq/github-profile-summary-cards">
-  <img src="./profile-summary-card-output/transparent/3-stats.svg" />
-  <img src="./profile-summary-card-output/transparent/2-most-commit-language.svg" />
-</a>
-
 ### Metrics
 
 ![Metrics](./github-metrics.svg)
-
-### Activity
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/nyuton1/nyuton1/output/github-contribution-grid-snake-dark.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/nyuton1/nyuton1/output/github-contribution-grid-snake.svg" />
-  <img alt="github contribution grid snake animation" src="https://raw.githubusercontent.com/nyuton1/nyuton1/output/github-contribution-grid-snake.svg" />
-</picture>
