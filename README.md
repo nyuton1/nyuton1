@@ -8,7 +8,7 @@ Building products that solve real problems on campus.
 
 ### About
 
-CS student at Kansai University (Class of 2028), Faculty of Engineering Science.
+Informatics student at Kindai University (Class of 2028), Faculty of Informatics.
 I plan, negotiate, and ship — from talking with shop owners to deploying to production.
 Currently building a campus mobile-order system and an AI-assisted review system for our university festival.
 Comfortable across the stack; happiest when code removes someone's manual work.
