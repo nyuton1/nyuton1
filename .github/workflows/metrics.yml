@@ -13,10 +13,32 @@ jobs:
     permissions:
       contents: write
     steps:
-      - uses: lowlighter/metrics@latest
+      # lowlighter/metrics is unmaintained and v3.34 crashes when the GitHub
+      # events API returns a PushEvent without "payload.commits"
+      # (habits plugin: "Cannot destructure property 'author' of 'undefined'").
+      # Patch the prebuilt image here; with "use_prebuilt_image: no" the action
+      # reuses the local "metrics:3.34.0" image as-is instead of pulling/building.
+      - name: Patch metrics image (fix habits plugin crash)
+        run: |
+          docker pull ghcr.io/lowlighter/metrics:v3.34
+          docker create --name metrics-patch ghcr.io/lowlighter/metrics:v3.34
+          docker cp metrics-patch:/metrics/source/plugins/habits/index.mjs habits.mjs
+          grep -qF '.flatMap(({payload}) => payload.commits)' habits.mjs
+          sed -i 's/\.flatMap(({payload}) => payload\.commits)/.flatMap(({payload}) => payload?.commits ?? [])/' habits.mjs
+          docker cp habits.mjs metrics-patch:/metrics/source/plugins/habits/index.mjs
+          docker commit metrics-patch metrics:3.34.0
+          docker rm metrics-patch
+      - uses: lowlighter/metrics@v3.34
         with:
           token: ${{ secrets.SUMMARY_GITHUB_TOKEN }}
           user: nyuton1
+          use_prebuilt_image: no
+          # Don't publish a broken SVG: treat plugin errors (e.g. transient
+          # GraphQL 401 in isocalendar) as fatal, retry the render, and keep
+          # the previous image if every attempt fails.
+          plugins_errors_fatal: yes
+          retries: 3
+          retries_delay: 300
           template: classic
           base: "header, activity, community, repositories, metadata"
           config_timezone: Asia/Tokyo
